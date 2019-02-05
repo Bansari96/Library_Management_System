@@ -8,6 +8,9 @@ namespace LibraryManagementSystem.Controllers
 {
     public class HomeController : Controller
     {
+        //connecting to the database
+       
+
         public ActionResult Index()
         {
             return View();
@@ -24,6 +27,11 @@ namespace LibraryManagementSystem.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+
+        public ActionResult Categories()
+        {
             return View();
         }
     }

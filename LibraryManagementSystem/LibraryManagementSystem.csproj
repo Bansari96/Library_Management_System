@@ -176,6 +176,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BooksController.cs" />
+    <Compile Include="Controllers\Books_CategoryController.cs" />
+    <Compile Include="Controllers\Book_RegisterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -248,6 +251,22 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Books\Create.cshtml" />
+    <Content Include="Views\Books\Delete.cshtml" />
+    <Content Include="Views\Books\Details.cshtml" />
+    <Content Include="Views\Books\Edit.cshtml" />
+    <Content Include="Views\Books\Index.cshtml" />
+    <Content Include="Views\Home\Categories.cshtml" />
+    <Content Include="Views\Books_Category\Create.cshtml" />
+    <Content Include="Views\Books_Category\Delete.cshtml" />
+    <Content Include="Views\Books_Category\Details.cshtml" />
+    <Content Include="Views\Books_Category\Edit.cshtml" />
+    <Content Include="Views\Books_Category\Index.cshtml" />
+    <Content Include="Views\Book_Register\Create.cshtml" />
+    <Content Include="Views\Book_Register\Delete.cshtml" />
+    <Content Include="Views\Book_Register\Details.cshtml" />
+    <Content Include="Views\Book_Register\Edit.cshtml" />
+    <Content Include="Views\Book_Register\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
