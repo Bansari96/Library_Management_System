@@ -6,7 +6,7 @@
 	<li>Created MVC web application</li>
 	<li>Controllers and Views are added for the tables by  using MVC Scaffolding</li>
 	<li>Connected the database with the application</li>
-	<li>Changed the Look of Home page by adding some bootstrap classes of "row", "col-xs-6", "thumbnail" and "action" using <a href="https://bootstrapcreative.com/resources/bootstrap-3-css-classes-index/"></a></li>
+	<li>Changed the Look of Home page by adding some bootstrap classes of "row", "col-xs-6", "thumbnail" and "action" using <a href="https://bootstrapcreative.com/resources/bootstrap-3-css-classes-index/">Bootstrap</a></li>
 	<li>Images also added to the home page</li>
 	<li>Tested database by adding and deleting some rows after debugging.</li>
 	<li>Publish web application to the Azure portal by creating SQL database in azure</li>
