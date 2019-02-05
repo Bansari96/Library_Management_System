@@ -1,4 +1,4 @@
-﻿<h1>COMP2084 - Assignment1</h1>
+<h1>COMP2084 - Assignment1</h1>
 
 <p>Library Management System</p>
 <ul>
