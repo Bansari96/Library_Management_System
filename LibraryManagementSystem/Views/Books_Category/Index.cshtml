@@ -28,13 +28,14 @@
         <td>
             @if (Request.IsAuthenticated)
             {
-                @Html.ActionLink("Edit", "Edit", new { id = item.Category_id }) |
+                @Html.ActionLink("Edit", "Edit", new { id = item.Category_id }) 
+
                 @Html.ActionLink("Delete", "Delete", new { id = item.Category_id })
             }
-            @Html.ActionLink("Details", "Details", new { id = item.Category_id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Category_id }) 
 
         </td>
     </tr>
 }
-
+    
 </table>

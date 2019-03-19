@@ -8,7 +8,10 @@
 <h2>Books</h2>
 
 <p>
+    @if (Request.IsAuthenticated)
+    {
     @Html.ActionLink("Create New", "Create")
+    }
 </p>
 <table class="table">
     <tr>
