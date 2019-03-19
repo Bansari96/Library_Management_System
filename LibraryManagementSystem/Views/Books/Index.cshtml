@@ -47,12 +47,13 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Book_price)
             </td>
-            @if (Request.IsAuthenticated)
-            {
+           
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Book_id })
+                @if (Request.IsAuthenticated)
+                {
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Book_id })
 
-                @Html.ActionLink("Delete", "Delete", new { id = item.Book_id })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Book_id })
                 }
 
                 @Html.ActionLink("Details", "Details", new { id = item.Book_id })

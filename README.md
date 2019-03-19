@@ -1,6 +1,6 @@
 <h1>COMP2084 - Assignment1</h1>
 
-<h2><b>Library Management System</b></h2>
+<h2><b>Library Management System : <a href = "https://libmanagementsystem.azurewebsites.net/"/> </b></h2>
 <ul>
 	<li>Database is created with 3 tables of Books, Books_Categories and Book_Register</li>
 	<li>Created MVC web application</li>
@@ -11,3 +11,13 @@
 	<li>Tested database by adding and deleting some rows after debugging.</li>
 	<li>Publish web application to the Azure portal by creating SQL database in azure</li>
 </ul>
+
+
+<h2><b>Assignment-2 Part:1</b></h2>
+<ul>
+	<li>Enabeling API Google and Microsoft login - </li>
+	<li>Books_register only viewed by AuthorizedPerson</li>
+	<li>Authorization and Authentciation added for Edit | Delete | Details Link in views</li>
+</ul>
+
+

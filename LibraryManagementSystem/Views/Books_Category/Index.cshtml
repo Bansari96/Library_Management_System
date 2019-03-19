@@ -29,12 +29,13 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Category_name)
             </td>
-            @if (Request.IsAuthenticated)
-            {
+           
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Category_id }) 
+                @if (Request.IsAuthenticated)
+                {
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Category_id })
 
-                @Html.ActionLink("Delete", "Delete", new { id = item.Category_id })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Category_id })
                 }
                 @Html.ActionLink("Details", "Details", new { id = item.Category_id })
             </td>
