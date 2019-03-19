@@ -25,6 +25,8 @@ namespace LibraryManagementSystem.Models
         [StringLength(50)]
         public string Book_author { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:c}")]
+        [Range(0.01, 100000)]
         [Column(TypeName = "money")]
         public decimal? Book_price { get; set; }
 
