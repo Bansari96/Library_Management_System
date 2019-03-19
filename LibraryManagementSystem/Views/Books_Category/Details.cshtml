@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2> Categories Details</h2>
+<h2>Details</h2>
 
 <div>
     <h4>Books_Category</h4>
@@ -22,9 +22,6 @@
     </dl>
 </div>
 <p>
-    @if (Request.IsAuthenticated)
-    {
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Category_id }) 
-    }
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Category_id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

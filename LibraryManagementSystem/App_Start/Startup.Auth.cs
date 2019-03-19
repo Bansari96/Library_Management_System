@@ -52,8 +52,8 @@ namespace LibraryManagementSystem
             // Uncomment the following lines to enable logging in with third party login providers
             app.UseMicrosoftAccountAuthentication
             (
-                clientId: ConfigurationManager.AppSettings["MicrosoftClientID"],
-                clientSecret: ConfigurationManager.AppSettings["MicrosoftClientSecret"]
+                clientId: "5fdf735a-97d2-4698-bf16-794ed79f6607",
+                clientSecret: "tqelnGRCI4219}%enAHD4+]"
             );
 
             //id: 5fdf735a-97d2-4698-bf16-794ed79f6607

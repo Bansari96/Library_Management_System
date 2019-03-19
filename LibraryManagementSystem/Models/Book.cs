@@ -15,12 +15,11 @@ namespace LibraryManagementSystem.Models
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Book_id { get; set; }
 
         [StringLength(50)]
         public string Book_name { get; set; }
-
 
         public int? Category_id { get; set; }
 

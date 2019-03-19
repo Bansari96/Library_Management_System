@@ -15,7 +15,7 @@ namespace LibraryManagementSystem.Models
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Category_id { get; set; }
 
         [StringLength(50)]

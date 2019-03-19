@@ -25,10 +25,7 @@
                     <li>@Html.ActionLink("Books", "Index", "Books")</li>
                     @*//Categories added to navbar*@
                     <li>@Html.ActionLink("Categories", "Index", "Books_Category")</li>
-                    @if (Request.IsAuthenticated)
-                    {
                     <li>@Html.ActionLink("Your Books", "Index", "Book_Register")</li>
-                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
