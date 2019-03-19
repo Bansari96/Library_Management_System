@@ -6,14 +6,16 @@
 }
 
 <h2>Index</h2>
-
+@if (User.Identity.IsAuthenticated)
+{
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+}
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Book.Book_name)
+            @Html.DisplayNameFor(model => model.Book_id)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Issued_date)
@@ -27,13 +29,16 @@
         <th>
             @Html.DisplayNameFor(model => model.Fine_amount)
         </th>
-        <th></th>
-    </tr>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <th>Action</th>
+        }
+        </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Book.Book_name)
+            @Html.DisplayFor(modelItem => item.Book_id)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Issued_date)
@@ -47,12 +52,15 @@
         <td>
             @Html.DisplayFor(modelItem => item.Fine_amount)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Book_borrow_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Book_borrow_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Book_borrow_id })
-        </td>
-    </tr>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Book_borrow_id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Book_borrow_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Book_borrow_id })
+            </td>
+        }
+        </tr>
 }
 
 </table>

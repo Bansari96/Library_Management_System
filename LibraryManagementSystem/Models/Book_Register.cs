@@ -25,7 +25,5 @@ namespace LibraryManagementSystem.Models
 
         [Column(TypeName = "money")]
         public decimal? Fine_amount { get; set; }
-
-        public virtual Book Book { get; set; }
     }
 }

@@ -10,15 +10,16 @@ using LibraryManagementSystem.Models;
 
 namespace LibraryManagementSystem.Controllers
 {
+    [Authorize]
     public class BooksController : Controller
     {
         private LibraryView db = new LibraryView();
 
+        [AllowAnonymous]
         // GET: Books
         public ActionResult Index()
         {
-            var books = db.Books.Include(b => b.Books_Category);
-            return View(books.ToList());
+            return View(db.Books.ToList());
         }
 
         // GET: Books/Details/5
@@ -39,7 +40,6 @@ namespace LibraryManagementSystem.Controllers
         // GET: Books/Create
         public ActionResult Create()
         {
-            ViewBag.Category_id = new SelectList(db.Books_Category, "Category_id", "Category_name");
             return View();
         }
 
@@ -57,7 +57,6 @@ namespace LibraryManagementSystem.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Category_id = new SelectList(db.Books_Category, "Category_id", "Category_name", book.Category_id);
             return View(book);
         }
 
@@ -73,7 +72,6 @@ namespace LibraryManagementSystem.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.Category_id = new SelectList(db.Books_Category, "Category_id", "Category_name", book.Category_id);
             return View(book);
         }
 
@@ -90,7 +88,6 @@ namespace LibraryManagementSystem.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Category_id = new SelectList(db.Books_Category, "Category_id", "Category_name", book.Category_id);
             return View(book);
         }
 

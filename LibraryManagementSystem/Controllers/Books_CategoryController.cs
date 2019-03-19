@@ -10,10 +10,12 @@ using LibraryManagementSystem.Models;
 
 namespace LibraryManagementSystem.Controllers
 {
+    [Authorize]
     public class Books_CategoryController : Controller
     {
         private LibraryView db = new LibraryView();
 
+        [AllowAnonymous]
         // GET: Books_Category
         public ActionResult Index()
         {

@@ -8,14 +8,13 @@ namespace LibraryManagementSystem.Models
     public partial class LibraryView : DbContext
     {
         public LibraryView()
-            : base("name=DefaultConnection")
+            : base("name=LibraryView")
         {
         }
 
         public virtual DbSet<Book_Register> Book_Register { get; set; }
         public virtual DbSet<Book> Books { get; set; }
         public virtual DbSet<Books_Category> Books_Category { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -1,55 +1,61 @@
 ﻿@model IEnumerable<LibraryManagementSystem.Models.Book>
 
 @{
-    ViewBag.Title = "Books";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Index</h2>
-
-<p>
-    @if (Request.IsAuthenticated)
-    {
-    @Html.ActionLink("Create New", "Create")
-    }
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Books_Category.Category_name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Book_name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Book_author)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Book_price)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Books_Category.Category_name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Book_name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Book_author)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Book_price)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Book_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Book_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Book_id })
-        </td>
-    </tr>
+@if (User.Identity.IsAuthenticated)
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
 }
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Book_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Book_author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Book_price)
+            </th>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <th>Action</th>
+            }
+            </tr>
 
-</table>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Book_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Book_author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Book_price)
+            </td>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Book_id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Book_id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Book_id })
+                </td>
+            }
+            </tr>
+        }
+
+    </table>

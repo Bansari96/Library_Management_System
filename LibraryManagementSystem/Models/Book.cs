@@ -8,12 +8,6 @@ namespace LibraryManagementSystem.Models
 
     public partial class Book
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Book()
-        {
-            Book_Register = new HashSet<Book_Register>();
-        }
-
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Book_id { get; set; }
@@ -28,10 +22,5 @@ namespace LibraryManagementSystem.Models
 
         [Column(TypeName = "money")]
         public decimal? Book_price { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Book_Register> Book_Register { get; set; }
-
-        public virtual Books_Category Books_Category { get; set; }
     }
 }
