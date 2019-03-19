@@ -8,7 +8,7 @@ namespace LibraryManagementSystem.Models
     public partial class LibraryView : DbContext
     {
         public LibraryView()
-            : base("name=LibraryView")
+            : base("name=DefaultConnection")
         {
         }
 
