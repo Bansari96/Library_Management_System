@@ -1,6 +1,6 @@
 <h1>COMP2084 - Assignment1</h1>
 
-<h2><b>Library Management System : <a href = "https://libmanagementsystem.azurewebsites.net/"/> </b></h2>
+<h2><b>Library Management System : https://libmanagementsystem.azurewebsites.net/ </b></h2>
 <ul>
 	<li>Database is created with 3 tables of Books, Books_Categories and Book_Register</li>
 	<li>Created MVC web application</li>
