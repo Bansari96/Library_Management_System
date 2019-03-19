@@ -8,7 +8,9 @@
 <h2>Categories of Books</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @if (Request.IsAuthenticated) {
+     @Html.ActionLink("Create New", "Create")
+    }
 </p>
 <table class="table">
     <tr>
@@ -24,9 +26,13 @@
             @Html.DisplayFor(modelItem => item.Category_name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Category_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Category_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Category_id })
+            @if (Request.IsAuthenticated)
+            {
+                @Html.ActionLink("Edit", "Edit", new { id = item.Category_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Category_id })
+            }
+            @Html.ActionLink("Details", "Details", new { id = item.Category_id }) |
+
         </td>
     </tr>
 }
