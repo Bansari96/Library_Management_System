@@ -9,7 +9,6 @@ namespace LibraryManagementSystem.Models
     public partial class Book_Register
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Book_borrow_id { get; set; }
 
         public int? Book_id { get; set; }
@@ -25,5 +24,7 @@ namespace LibraryManagementSystem.Models
 
         [Column(TypeName = "money")]
         public decimal? Fine_amount { get; set; }
+
+        public virtual Book Book { get; set; }
     }
 }

@@ -6,7 +6,7 @@
 }
 
 <h2>Index</h2>
-@if (User.Identity.IsAuthenticated)
+@if (Request.IsAuthenticated)
 {
     <p>
         @Html.ActionLink("Create New", "Create")
@@ -15,10 +15,10 @@
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Book_name)
+                @Html.DisplayNameFor(model => model.Books_Category.Category_name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Category_id)
+                @Html.DisplayNameFor(model => model.Book_name)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Book_author)
@@ -26,7 +26,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Book_price)
             </th>
-            @if (User.Identity.IsAuthenticated)
+            @if (Request.IsAuthenticated)
             {
                 <th>Action</th>
             }
@@ -36,10 +36,10 @@
         {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Book_name)
+                @Html.DisplayFor(modelItem => item.Books_Category.Category_name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Category_id)
+                @Html.DisplayFor(modelItem => item.Book_name)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Book_author)
@@ -47,7 +47,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Book_price)
             </td>
-            @if (User.Identity.IsAuthenticated)
+            @if (Request.IsAuthenticated)
             {
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.Book_id }) |

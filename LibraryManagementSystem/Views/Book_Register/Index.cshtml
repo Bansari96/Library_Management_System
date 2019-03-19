@@ -6,7 +6,7 @@
 }
 
 <h2>Index</h2>
-@if (User.Identity.IsAuthenticated)
+@if (Request.IsAuthenticated)
 {
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -15,7 +15,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Book_id)
+            @Html.DisplayNameFor(model => model.Book.Book_name)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Issued_date)
@@ -29,16 +29,16 @@
         <th>
             @Html.DisplayNameFor(model => model.Fine_amount)
         </th>
-        @if (User.Identity.IsAuthenticated)
+        @if (Request.IsAuthenticated)
         {
             <th>Action</th>
         }
-        </tr>
+            </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Book_id)
+            @Html.DisplayFor(modelItem => item.Book.Book_name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Issued_date)
@@ -52,7 +52,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.Fine_amount)
         </td>
-        @if (User.Identity.IsAuthenticated)
+        @if (Request.IsAuthenticated)
         {
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.Book_borrow_id }) |
