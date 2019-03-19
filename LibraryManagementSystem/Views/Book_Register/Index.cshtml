@@ -5,13 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Your Books Registrar</h2>
+<h2>Index</h2>
 
 <p>
-    @if (Request.IsAuthenticated)
-    {
     @Html.ActionLink("Create New", "Create")
-    }
 </p>
 <table class="table">
     <tr>

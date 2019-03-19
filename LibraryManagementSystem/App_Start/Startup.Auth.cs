@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security.MicrosoftAccount;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
@@ -13,8 +12,6 @@ namespace LibraryManagementSystem
 {
     public partial class Startup
     {
-        public object OAuthWebSecurity { get; private set; }
-
         // For more information on configuring authentication, please visit https://go.microsoft.com/fwlink/?LinkId=301864
         public void ConfigureAuth(IAppBuilder app)
         {
@@ -38,7 +35,7 @@ namespace LibraryManagementSystem
                         validateInterval: TimeSpan.FromMinutes(30),
                         regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }
-            });
+            });            
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
             // Enables the application to temporarily store user information when they are verifying the second factor in the two-factor authentication process.
@@ -50,14 +47,9 @@ namespace LibraryManagementSystem
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
             // Uncomment the following lines to enable logging in with third party login providers
-            app.UseMicrosoftAccountAuthentication
-            (
-                clientId: "5fdf735a-97d2-4698-bf16-794ed79f6607",
-                clientSecret: "tqelnGRCI4219}%enAHD4+]"
-            );
-
-            //id: 5fdf735a-97d2-4698-bf16-794ed79f6607
-            //secret:ibaMQ^$@}hepmOJDZE37692
+            //app.UseMicrosoftAccountAuthentication(
+            //    clientId: "",
+            //    clientSecret: "");
 
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
@@ -71,7 +63,7 @@ namespace LibraryManagementSystem
             {
                 ClientId = ConfigurationManager.AppSettings["GoogleClientID"],
                 ClientSecret = ConfigurationManager.AppSettings["GoogleClientSecret"]
-            });           
-        }        
+            });
+        }
     }
 }

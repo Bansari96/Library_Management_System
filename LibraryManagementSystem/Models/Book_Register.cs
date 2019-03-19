@@ -12,26 +12,17 @@ namespace LibraryManagementSystem.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Book_borrow_id { get; set; }
 
-        [Display(Name = "BookName")]
         public int? Book_id { get; set; }
 
         [Column(TypeName = "date")]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime? Issued_date { get; set; }
 
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Column(TypeName = "date")]
         public DateTime? Due_date { get; set; }
 
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Column(TypeName = "date")]
         public DateTime? Returned_date { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:c}")]
-        [Range(0.01, 100000)]
         [Column(TypeName = "money")]
         public decimal? Fine_amount { get; set; }
 

@@ -27,8 +27,6 @@ namespace LibraryManagementSystem.Models
         public string Book_author { get; set; }
 
         [Column(TypeName = "money")]
-        [DisplayFormat(DataFormatString = "{0:c}")]
-        [Range(0.01, 100000)]
         public decimal? Book_price { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

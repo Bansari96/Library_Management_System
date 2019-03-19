@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Books</h2>
+<h2>Index</h2>
 
 <p>
     @if (Request.IsAuthenticated)
@@ -45,8 +45,9 @@
             @Html.DisplayFor(modelItem => item.Book_price)
         </td>
         <td>
-           
-            @Html.ActionLink("Details", "Details", new { id=item.Book_id }) 
+            @Html.ActionLink("Edit", "Edit", new { id=item.Book_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Book_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Book_id })
         </td>
     </tr>
 }
