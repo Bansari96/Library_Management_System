@@ -188,7 +188,9 @@
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Books_Category.cs" />
     <Compile Include="Models\Book_Register.cs" />
+    <Compile Include="Models\IDataBooks.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IMockBooks.cs" />
     <Compile Include="Models\LibraryView.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\sysdiagram.cs" />

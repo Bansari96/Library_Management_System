@@ -13,7 +13,20 @@ namespace LibraryManagementSystem.Controllers
     [Authorize]
     public class BooksController : Controller
     {
-        private LibraryView db = new LibraryView();
+        //private LibraryView db = new LibraryView();
+
+        IMockBooks db;
+
+        //default constructor
+        public BooksController()
+        {
+            this.db = new IDataBooks();
+        }
+
+        public BooksController(IMockBooks mockDb)
+        {
+            this.db = mockDb;
+        }
 
         [AllowAnonymous]
         // GET: Books
@@ -30,7 +43,8 @@ namespace LibraryManagementSystem.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Book book = db.Books.Find(id);
+            //Book book = db.Books.Find(id);
+            Book book = db.Books.SingleOrDefault(b => b.Book_id == id);
             if (book == null)
             {
                 return HttpNotFound();
@@ -41,7 +55,7 @@ namespace LibraryManagementSystem.Controllers
         // GET: Books/Create
         public ActionResult Create()
         {
-            ViewBag.Category_id = new SelectList(db.Books_Category, "Category_id", "Category_name");
+           // ViewBag.Category_id = new SelectList(db.Books_Category, "Category_id", "Category_name");
             return View();
         }
 
@@ -54,12 +68,13 @@ namespace LibraryManagementSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Books.Add(book);
-                db.SaveChanges();
+                //db.Books.Add(book);
+                //db.SaveChanges();
+                db.Save(book);
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Category_id = new SelectList(db.Books_Category, "Category_id", "Category_name", book.Category_id);
+            //ViewBag.Category_id = new SelectList(db.Books_Category, "Category_id", "Category_name", book.Category_id);
             return View(book);
         }
 
@@ -70,12 +85,13 @@ namespace LibraryManagementSystem.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Book book = db.Books.Find(id);
+            //Book book = db.Books.Find(id);
+            Book book = db.Books.SingleOrDefault(b => b.Book_id == id);
             if (book == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Category_id = new SelectList(db.Books_Category, "Category_id", "Category_name", book.Category_id);
+           // ViewBag.Category_id = new SelectList(db.Books_Category, "Category_id", "Category_name", book.Category_id);
             return View(book);
         }
 
@@ -88,11 +104,11 @@ namespace LibraryManagementSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(book).State = EntityState.Modified;
-                db.SaveChanges();
+                //db.Entry(book).State = EntityState.Modified;
+                //db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Category_id = new SelectList(db.Books_Category, "Category_id", "Category_name", book.Category_id);
+            //ViewBag.Category_id = new SelectList(db.Books_Category, "Category_id", "Category_name", book.Category_id);
             return View(book);
         }
 
@@ -103,7 +119,8 @@ namespace LibraryManagementSystem.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Book book = db.Books.Find(id);
+            //Book book = db.Books.Find(id);
+            Book book = db.Books.SingleOrDefault(b => b.Book_id == id);
             if (book == null)
             {
                 return HttpNotFound();
@@ -116,9 +133,11 @@ namespace LibraryManagementSystem.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Book book = db.Books.Find(id);
-            db.Books.Remove(book);
-            db.SaveChanges();
+            //Book book = db.Books.Find(id);
+            Book book = db.Books.SingleOrDefault(b => b.Book_id == id);
+            //db.Books.Remove(book);
+            //db.SaveChanges();
+            db.Delete(book);
             return RedirectToAction("Index");
         }
 

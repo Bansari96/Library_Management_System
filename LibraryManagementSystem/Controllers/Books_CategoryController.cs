@@ -15,6 +15,8 @@ namespace LibraryManagementSystem.Controllers
     {
         private LibraryView db = new LibraryView();
 
+        
+
         [AllowAnonymous]
         // GET: Books_Category
         public ActionResult Index()
