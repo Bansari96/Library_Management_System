@@ -33,7 +33,7 @@ namespace LibraryManagementSystem.Controllers
         public ActionResult Index()
         {
             var books = db.Books.Include(b => b.Books_Category);
-            return View(books.ToList());
+            return View("Index",books.ToList());
         }
 
         // GET: Books/Details/5
@@ -49,14 +49,14 @@ namespace LibraryManagementSystem.Controllers
             {
                 return HttpNotFound();
             }
-            return View(book);
+            return View("Details",book);
         }
 
         // GET: Books/Create
         public ActionResult Create()
         {
            ViewBag.Category_id = new SelectList(db.Books_Category, "Category_id", "Category_name");
-           return View();
+           return View("Create");
         }
 
         // POST: Books/Create
@@ -75,7 +75,7 @@ namespace LibraryManagementSystem.Controllers
             }
 
             ViewBag.Category_id = new SelectList(db.Books_Category, "Category_id", "Category_name", book.Category_id);
-            return View(book);
+            return View("Create",book);
         }
 
         // GET: Books/Edit/5
@@ -125,7 +125,7 @@ namespace LibraryManagementSystem.Controllers
             {
                 return HttpNotFound();
             }
-            return View(book);
+            return View("Delete",book);
         }
 
         // POST: Books/Delete/5
