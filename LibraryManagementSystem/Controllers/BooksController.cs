@@ -55,8 +55,8 @@ namespace LibraryManagementSystem.Controllers
         // GET: Books/Create
         public ActionResult Create()
         {
-           // ViewBag.Category_id = new SelectList(db.Books_Category, "Category_id", "Category_name");
-            return View();
+           ViewBag.Category_id = new SelectList(db.Books_Category, "Category_id", "Category_name");
+           return View();
         }
 
         // POST: Books/Create
@@ -74,7 +74,7 @@ namespace LibraryManagementSystem.Controllers
                 return RedirectToAction("Index");
             }
 
-            //ViewBag.Category_id = new SelectList(db.Books_Category, "Category_id", "Category_name", book.Category_id);
+            ViewBag.Category_id = new SelectList(db.Books_Category, "Category_id", "Category_name", book.Category_id);
             return View(book);
         }
 
@@ -91,8 +91,8 @@ namespace LibraryManagementSystem.Controllers
             {
                 return HttpNotFound();
             }
-           // ViewBag.Category_id = new SelectList(db.Books_Category, "Category_id", "Category_name", book.Category_id);
-            return View(book);
+           ViewBag.Category_id = new SelectList(db.Books_Category, "Category_id", "Category_name", book.Category_id);
+           return View(book);
         }
 
         // POST: Books/Edit/5
@@ -108,7 +108,7 @@ namespace LibraryManagementSystem.Controllers
                 //db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            //ViewBag.Category_id = new SelectList(db.Books_Category, "Category_id", "Category_name", book.Category_id);
+            ViewBag.Category_id = new SelectList(db.Books_Category, "Category_id", "Category_name", book.Category_id);
             return View(book);
         }
 

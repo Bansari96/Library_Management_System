@@ -11,6 +11,7 @@ namespace LibraryManagementSystem.Models
         private LibraryView db = new LibraryView();
 
         public IQueryable<Book> Books { get { return db.Books; } }
+        public IQueryable<Books_Category> Books_Category { get { return db.Books_Category; } }
 
         public void Delete(Book book)
         {
