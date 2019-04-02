@@ -25,6 +25,7 @@
 	<li>Test controller created for Books </li>
 	<li>IDataBooks and IMockBooks Models created and Moq reference added</li>
 	<li>Test methods created for Index, Details, Create, Edit and Delete</li>
+	<li>100% code coverage in AxoCover for BooksControllerTest</li>
 </ul>
 
 

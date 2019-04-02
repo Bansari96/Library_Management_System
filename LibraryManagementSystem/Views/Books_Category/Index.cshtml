@@ -30,20 +30,20 @@
                 @Html.DisplayFor(modelItem => item.Category_name)
             </td>
 
+            <td>
+                @if (Request.IsAuthenticated)
+                {
+                
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Category_id }) 
 
-            @if (Request.IsAuthenticated)
-            {
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Category_id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Category_id }) 
+                
+                }
 
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Category_id }) |
-                </td>
-            }
-            
                 @Html.ActionLink("Details", "Details", new { id = item.Category_id })
-            
+            </td>
 
-        </tr>
+            </tr>
         }
 
     </table>
