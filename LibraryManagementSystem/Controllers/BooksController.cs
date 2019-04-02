@@ -139,16 +139,17 @@ namespace LibraryManagementSystem.Controllers
             //db.Books.Remove(book);
             //db.SaveChanges();
             db.Delete(book);
+            db.Save(book);
             return RedirectToAction("Index");
         }
 
-        //protected override void Dispose(bool disposing)
-        //{
-        //    if (disposing)
-        //    {
-        //        db.Dispose();
-        //    }
-        //    base.Dispose(disposing);
-        //}
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
     }
 }
