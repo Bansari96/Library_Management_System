@@ -35,12 +35,12 @@
                 {
                 
                     @Html.ActionLink("Edit", "Edit", new { id = item.Category_id }) 
-
+                    <span>|</span>
                     @Html.ActionLink("Delete", "Delete", new { id = item.Category_id }) 
                 
                 }
 
-                @Html.ActionLink("Details", "Details", new { id = item.Category_id })
+                |@Html.ActionLink("Details", "Details", new { id = item.Category_id })
             </td>
 
             </tr>
