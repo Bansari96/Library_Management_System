@@ -11,7 +11,7 @@
   "Filters": "+[*]*",
   "IsIncludingSolutionAssemblies": true,
   "IsExcludingTestAssemblies": false,
-  "IsCoveringByTest": true,
+  "IsCoveringByTest": false,
   "IsMergingByHash": true,
   "IsSkippingAutoProps": true,
   "IsVisitorCountLimited": false,

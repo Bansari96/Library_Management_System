@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html data-ng-app="coverageApp">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE,chrome=1" />
+<link href="data:image/png;base64,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" rel="icon" type="image/x-icon" />
+<title>Summary - Coverage Report</title>
+<link rel="stylesheet" type="text/css" href="report.css" />
+</head><body data-ng-controller="SummaryViewCtrl"><div class="container"><div class="containerleft">
+<h1>Summary</h1>
+<table class="overview table-fixed">
+<colgroup>
+<col class="column135" />
+<col />
+</colgroup>
+<tbody>
+<tr><th>Generated on:</th><td>4/2/2019 - 1:44:30 AM</td></tr>
+<tr><th>Parser:</th><td>OpenCoverParser</td></tr>
+<tr><th>Assemblies:</th><td>2</td></tr>
+<tr><th>Classes:</th><td>42</td></tr>
+<tr><th>Files:</th><td>24</td></tr>
+<tr><th>Covered lines:</th><td>29</td></tr>
+<tr><th>Uncovered lines:</th><td>875</td></tr>
+<tr><th>Coverable lines:</th><td>904</td></tr>
+<tr><th>Total lines:</th><td>2298</td></tr>
+<tr><th>Line coverage:</th><td>3.2%</td></tr>
+<tr><th>Branch coverage:</th><td>1.1%</td></tr>
+</tbody>
+</table>
+<h1>Risk Hotspots</h1>
+<div data-ng-if="riskHotspots.length > 0" data-reactive-risk-hotspot-table data-risk-hotspots="riskHotspots" data-risk-hotspot-metrics="riskHotspotMetrics"></div>
+<table data-ng-if="false" class="overview table-fixed stripped">
+<colgroup>
+<col />
+<col />
+<col />
+<col class="column105" />
+<col class="column105" />
+<col class="column105" />
+</colgroup>
+<thead><tr><th>Assembly</th>
+<th>Class</th>
+<th>Method</th>
+<th class="right">Cyclomatic complexity <a href="https://en.wikipedia.org/wiki/Cyclomatic_complexity"><i class="icon-info-circled"></i></a></th>
+<th class="right">NPath complexity <a href="https://modess.io/npath-complexity-cyclomatic-complexity-explained"><i class="icon-info-circled"></i></a></th>
+<th class="right">Crap Score <a href="https://googletesting.blogspot.de/2011/02/this-code-is-crap.html"><i class="icon-info-circled"></i></a></th>
+</tr></thead>
+<tbody>
+<tr>
+<td>LibraryManagementSystem</td>
+<td><a href="LibraryManagementSystem_ManageController.htm">LibraryManagementSystem.Controllers.ManageController</a></td>
+<td>Index()</td>
+<td class="right lightred">23</td>
+<td class="right lightgreen">2</td>
+<td class="right lightred">552</td>
+</tr>
+<tr>
+<td>LibraryManagementSystem</td>
+<td><a href="LibraryManagementSystem_AccountController.htm">LibraryManagementSystem.Controllers.AccountController</a></td>
+<td>ExternalLoginConfirmation()</td>
+<td class="right lightred">16</td>
+<td class="right lightgreen">32</td>
+<td class="right lightred">272</td>
+</tr>
+<tr>
+<td>LibraryManagementSystem</td>
+<td><a href="LibraryManagementSystem_ManageController.htm">LibraryManagementSystem.Controllers.ManageController</a></td>
+<td>ManageLogins()</td>
+<td class="right lightgreen">13</td>
+<td class="right lightgreen">4</td>
+<td class="right lightred">182</td>
+</tr>
+<tr>
+<td>LibraryManagementSystem</td>
+<td><a href="LibraryManagementSystem_AccountController.htm">LibraryManagementSystem.Controllers.AccountController</a></td>
+<td>ExternalLoginCallback()</td>
+<td class="right lightgreen">12</td>
+<td class="right lightgreen">10</td>
+<td class="right lightred">156</td>
+</tr>
+<tr>
+<td>LibraryManagementSystem</td>
+<td><a href="LibraryManagementSystem_ManageController.htm">LibraryManagementSystem.Controllers.ManageController</a></td>
+<td>VerifyPhoneNumber()</td>
+<td class="right lightgreen">11</td>
+<td class="right lightgreen">8</td>
+<td class="right lightred">132</td>
+</tr>
+<tr>
+<td>LibraryManagementSystem</td>
+<td><a href="LibraryManagementSystem_ManageController.htm">LibraryManagementSystem.Controllers.ManageController</a></td>
+<td>ChangePassword()</td>
+<td class="right lightgreen">11</td>
+<td class="right lightgreen">8</td>
+<td class="right lightred">132</td>
+</tr>
+<tr>
+<td>LibraryManagementSystem</td>
+<td><a href="LibraryManagementSystem_ManageController.htm">LibraryManagementSystem.Controllers.ManageController</a></td>
+<td>SetPassword()</td>
+<td class="right lightgreen">11</td>
+<td class="right lightgreen">8</td>
+<td class="right lightred">132</td>
+</tr>
+<tr>
+<td>LibraryManagementSystem</td>
+<td><a href="LibraryManagementSystem_ManageController.htm">LibraryManagementSystem.Controllers.ManageController</a></td>
+<td>RemoveLogin()</td>
+<td class="right lightgreen">10</td>
+<td class="right lightgreen">4</td>
+<td class="right lightred">110</td>
+</tr>
+<tr>
+<td>LibraryManagementSystem</td>
+<td><a href="LibraryManagementSystem_ManageController.htm">LibraryManagementSystem.Controllers.ManageController</a></td>
+<td>RemovePhoneNumber()</td>
+<td class="right lightgreen">10</td>
+<td class="right lightgreen">4</td>
+<td class="right lightred">110</td>
+</tr>
+<tr>
+<td>LibraryManagementSystem</td>
+<td><a href="LibraryManagementSystem_ManageController.htm">LibraryManagementSystem.Controllers.ManageController</a></td>
+<td>EnableTwoFactorAuthentication()</td>
+<td class="right lightgreen">9</td>
+<td class="right lightgreen">2</td>
+<td class="right lightred">90</td>
+</tr>
+<tr>
+<td>LibraryManagementSystem</td>
+<td><a href="LibraryManagementSystem_ManageController.htm">LibraryManagementSystem.Controllers.ManageController</a></td>
+<td>DisableTwoFactorAuthentication()</td>
+<td class="right lightgreen">9</td>
+<td class="right lightgreen">2</td>
+<td class="right lightred">90</td>
+</tr>
+<tr>
+<td>LibraryManagementSystem</td>
+<td><a href="LibraryManagementSystem_AccountController.htm">LibraryManagementSystem.Controllers.AccountController</a></td>
+<td>Login()</td>
+<td class="right lightgreen">8</td>
+<td class="right lightgreen">10</td>
+<td class="right lightred">72</td>
+</tr>
+<tr>
+<td>LibraryManagementSystem</td>
+<td><a href="LibraryManagementSystem_AccountController.htm">LibraryManagementSystem.Controllers.AccountController</a></td>
+<td>ForgotPassword()</td>
+<td class="right lightgreen">8</td>
+<td class="right lightgreen">8</td>
+<td class="right lightred">72</td>
+</tr>
+<tr>
+<td>LibraryManagementSystem</td>
+<td><a href="LibraryManagementSystem_AccountController.htm">LibraryManagementSystem.Controllers.AccountController</a></td>
+<td>ResetPassword()</td>
+<td class="right lightgreen">8</td>
+<td class="right lightgreen">8</td>
+<td class="right lightred">72</td>
+</tr>
+<tr>
+<td>LibraryManagementSystem</td>
+<td><a href="LibraryManagementSystem_AccountController.htm">LibraryManagementSystem.Controllers.AccountController</a></td>
+<td>VerifyCode()</td>
+<td class="right lightgreen">7</td>
+<td class="right lightgreen">10</td>
+<td class="right lightred">56</td>
+</tr>
+<tr>
+<td>LibraryManagementSystem</td>
+<td><a href="LibraryManagementSystem_AccountController.htm">LibraryManagementSystem.Controllers.AccountController</a></td>
+<td>Register()</td>
+<td class="right lightgreen">7</td>
+<td class="right lightgreen">4</td>
+<td class="right lightred">56</td>
+</tr>
+<tr>
+<td>LibraryManagementSystem</td>
+<td><a href="LibraryManagementSystem_AccountController.htm">LibraryManagementSystem.Controllers.AccountController</a></td>
+<td>ConfirmEmail()</td>
+<td class="right lightgreen">7</td>
+<td class="right lightgreen">4</td>
+<td class="right lightred">56</td>
+</tr>
+<tr>
+<td>LibraryManagementSystem</td>
+<td><a href="LibraryManagementSystem_AccountController.htm">LibraryManagementSystem.Controllers.AccountController</a></td>
+<td>SendCode()</td>
+<td class="right lightgreen">7</td>
+<td class="right lightgreen">2</td>
+<td class="right lightred">56</td>
+</tr>
+<tr>
+<td>LibraryManagementSystem</td>
+<td><a href="LibraryManagementSystem_ManageController.htm">LibraryManagementSystem.Controllers.ManageController</a></td>
+<td>AddPhoneNumber()</td>
+<td class="right lightgreen">7</td>
+<td class="right lightgreen">4</td>
+<td class="right lightred">56</td>
+</tr>
+<tr>
+<td>LibraryManagementSystem</td>
+<td><a href="LibraryManagementSystem_ManageController.htm">LibraryManagementSystem.Controllers.ManageController</a></td>
+<td>LinkLoginCallback()</td>
+<td class="right lightgreen">7</td>
+<td class="right lightgreen">2</td>
+<td class="right lightred">56</td>
+</tr>
+</tbody>
+</table>
+<h1>Coverage</h1>
+<div data-ng-if="coverageTableFilteringEnabled" data-reactive-coverage-table data-assemblies="assemblies" data-branch-coverage-available="branchCoverageAvailable"></div>
+<div data-ng-if="!coverageTableFilteringEnabled">
+<div class="ng-hide customizebox" data-ng-show="true"><input data-ng-click="enableCoverageTableFiltering()" value="Enable filtering" title="This may take some time since the report contains many classes." type="submit" /></div>
+</div>
+<table data-ng-if="!coverageTableFilteringEnabled" class="overview table-fixed stripped">
+<colgroup>
+<col />
+<col class="column90" />
+<col class="column105" />
+<col class="column100" />
+<col class="column70" />
+<col class="column60" />
+<col class="column112" />
+<col class="column60" />
+<col class="column112" />
+</colgroup>
+<thead><tr><th>Name</th><th class="right">Covered</th><th class="right">Uncovered</th><th class="right">Coverable</th><th class="right">Total</th><th class="center" colspan="2">Line coverage</th><th class="center" colspan="2">Branch coverage</th></tr></thead>
+<tbody>
+<tr><th>LibraryManagementSystem</th><th class="right">15</th><th class="right">794</th><th class="right">809</th><th class="right">3898</th><th title="LineCoverage" class="right">1.8%</th><th><table class="coverage"><tr><td class="green covered2">&nbsp;</td><td class="red covered98">&nbsp;</td></tr></table></th><th class="right">1.1%</th><th><table class="coverage"><tr><td class="green covered1">&nbsp;</td><td class="red covered99">&nbsp;</td></tr></table></th></tr>
+<tr><td><a href="LibraryManagementSystem_ApplicationSignInManager.htm">LibraryManagementSystem.ApplicationSignInManager</a></td><td class="right">0</td><td class="right">9</td><td class="right">9</td><td class="right">109</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_ApplicationUserManager.htm">LibraryManagementSystem.ApplicationUserManager</a></td><td class="right">0</td><td class="right">40</td><td class="right">40</td><td class="right">109</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_BundleConfig.htm">LibraryManagementSystem.BundleConfig</a></td><td class="right">0</td><td class="right">13</td><td class="right">13</td><td class="right">30</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_AccountController.htm">LibraryManagementSystem.Controllers.AccountController</a></td><td class="right">0</td><td class="right">214</td><td class="right">214</td><td class="right">485</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_Book_RegisterController.htm">LibraryManagementSystem.Controllers.Book_RegisterController</a></td><td class="right">0</td><td class="right">71</td><td class="right">71</td><td class="right">134</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_Books_CategoryController.htm">LibraryManagementSystem.Controllers.Books_CategoryController</a></td><td class="right">0</td><td class="right">66</td><td class="right">66</td><td class="right">131</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_BooksController.htm">LibraryManagementSystem.Controllers.BooksController</a></td><td class="right">11</td><td class="right">63</td><td class="right">74</td><td class="right">153</td><td title="LineCoverage" class="right">14.8%</td><td><table class="coverage"><tr><td class="green covered15">&nbsp;</td><td class="red covered85">&nbsp;</td></tr></table></td><td class="right">11.1%</td><td><table class="coverage"><tr><td class="green covered11">&nbsp;</td><td class="red covered89">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_HomeController.htm">LibraryManagementSystem.Controllers.HomeController</a></td><td class="right">0</td><td class="right">14</td><td class="right">14</td><td class="right">38</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_ManageController.htm">LibraryManagementSystem.Controllers.ManageController</a></td><td class="right">0</td><td class="right">203</td><td class="right">203</td><td class="right">389</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_EmailService.htm">LibraryManagementSystem.EmailService</a></td><td class="right">0</td><td class="right">3</td><td class="right">3</td><td class="right">109</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_FilterConfig.htm">LibraryManagementSystem.FilterConfig</a></td><td class="right">0</td><td class="right">4</td><td class="right">4</td><td class="right">14</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_AddPhoneNumberViewModel.htm">LibraryManagementSystem.Models.AddPhoneNumberViewModel</a></td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">86</td><td title="LineCoverage" class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_ApplicationDbContext.htm">LibraryManagementSystem.Models.ApplicationDbContext</a></td><td class="right">0</td><td class="right">6</td><td class="right">6</td><td class="right">33</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_ApplicationUser.htm">LibraryManagementSystem.Models.ApplicationUser</a></td><td class="right">0</td><td class="right">3</td><td class="right">3</td><td class="right">33</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_Book.htm">LibraryManagementSystem.Models.Book</a></td><td class="right">4</td><td class="right">0</td><td class="right">4</td><td class="right">38</td><td title="LineCoverage" class="right">100%</td><td><table class="coverage"><tr><td class="green covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_Book_Register.htm">LibraryManagementSystem.Models.Book_Register</a></td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">39</td><td title="LineCoverage" class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_Books_Category.htm">LibraryManagementSystem.Models.Books_Category</a></td><td class="right">0</td><td class="right">4</td><td class="right">4</td><td class="right">27</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_ChangePasswordViewModel.htm">LibraryManagementSystem.Models.ChangePasswordViewModel</a></td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">86</td><td title="LineCoverage" class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_ConfigureTwoFactorViewModel.htm">LibraryManagementSystem.Models.ConfigureTwoFactorViewModel</a></td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">86</td><td title="LineCoverage" class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_ExternalLoginConfirmationViewModel.htm">LibraryManagementSystem.Models.ExternalLoginConfirmationViewModel</a></td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">112</td><td title="LineCoverage" class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_ExternalLoginListViewModel.htm">LibraryManagementSystem.Models.ExternalLoginListViewModel</a></td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">112</td><td title="LineCoverage" class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_FactorViewModel.htm">LibraryManagementSystem.Models.FactorViewModel</a></td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">86</td><td title="LineCoverage" class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_ForgotPasswordViewModel.htm">LibraryManagementSystem.Models.ForgotPasswordViewModel</a></td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">112</td><td title="LineCoverage" class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_ForgotViewModel.htm">LibraryManagementSystem.Models.ForgotViewModel</a></td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">112</td><td title="LineCoverage" class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_IDataBooks.htm">LibraryManagementSystem.Models.IDataBooks</a></td><td class="right">0</td><td class="right">21</td><td class="right">21</td><td class="right">41</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_IndexViewModel.htm">LibraryManagementSystem.Models.IndexViewModel</a></td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">86</td><td title="LineCoverage" class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_LibraryView.htm">LibraryManagementSystem.Models.LibraryView</a></td><td class="right">0</td><td class="right">11</td><td class="right">11</td><td class="right">30</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_LoginViewModel.htm">LibraryManagementSystem.Models.LoginViewModel</a></td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">112</td><td title="LineCoverage" class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_ManageLoginsViewModel.htm">LibraryManagementSystem.Models.ManageLoginsViewModel</a></td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">86</td><td title="LineCoverage" class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_RegisterViewModel.htm">LibraryManagementSystem.Models.RegisterViewModel</a></td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">112</td><td title="LineCoverage" class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_ResetPasswordViewModel.htm">LibraryManagementSystem.Models.ResetPasswordViewModel</a></td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">112</td><td title="LineCoverage" class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_SendCodeViewModel.htm">LibraryManagementSystem.Models.SendCodeViewModel</a></td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">112</td><td title="LineCoverage" class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_SetPasswordViewModel.htm">LibraryManagementSystem.Models.SetPasswordViewModel</a></td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">86</td><td title="LineCoverage" class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_sysdiagram.htm">LibraryManagementSystem.Models.sysdiagram</a></td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">24</td><td title="LineCoverage" class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_VerifyCodeViewModel.htm">LibraryManagementSystem.Models.VerifyCodeViewModel</a></td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">112</td><td title="LineCoverage" class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_VerifyPhoneNumberViewModel.htm">LibraryManagementSystem.Models.VerifyPhoneNumberViewModel</a></td><td class="right">0</td><td class="right">0</td><td class="right">0</td><td class="right">86</td><td title="LineCoverage" class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_MvcApplication.htm">LibraryManagementSystem.MvcApplication</a></td><td class="right">0</td><td class="right">6</td><td class="right">6</td><td class="right">21</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_RouteConfig.htm">LibraryManagementSystem.RouteConfig</a></td><td class="right">0</td><td class="right">8</td><td class="right">8</td><td class="right">23</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_SmsService.htm">LibraryManagementSystem.SmsService</a></td><td class="right">0</td><td class="right">3</td><td class="right">3</td><td class="right">109</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem_Startup.htm">LibraryManagementSystem.Startup</a></td><td class="right">0</td><td class="right">32</td><td class="right">32</td><td class="right">83</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><th>LibraryManagementSystem.Tests</th><th class="right">14</th><th class="right">81</th><th class="right">95</th><th class="right">258</th><th title="LineCoverage" class="right">14.7%</th><th><table class="coverage"><tr><td class="green covered15">&nbsp;</td><td class="red covered85">&nbsp;</td></tr></table></th><th class="right"></th><th><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></th></tr>
+<tr><td><a href="LibraryManagementSystem.Tests_BooksControllerTest.htm">LibraryManagementSystem.Tests.Controllers.BooksControllerTest</a></td><td class="right">14</td><td class="right">66</td><td class="right">80</td><td class="right">204</td><td title="LineCoverage" class="right">17.5%</td><td><table class="coverage"><tr><td class="green covered18">&nbsp;</td><td class="red covered82">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+<tr><td><a href="LibraryManagementSystem.Tests_HomeControllerTest.htm">LibraryManagementSystem.Tests.Controllers.HomeControllerTest</a></td><td class="right">0</td><td class="right">15</td><td class="right">15</td><td class="right">54</td><td title="LineCoverage" class="right">0%</td><td><table class="coverage"><tr><td class="red covered100">&nbsp;</td></tr></table></td><td class="right"></td><td><table class="coverage"><tr><td class="gray covered100">&nbsp;</td></tr></table></td></tr>
+</tbody>
+</table>
+<div class="footer">Generated by: ReportGenerator 3.1.2.0<br />4/2/2019 - 1:44:30 AM<br /><a href="https://github.com/danielpalme/ReportGenerator">GitHub</a> | <a href="http://www.palmmedia.de">www.palmmedia.de</a></div></div></div>
+<script type="text/javascript" src="combined.js"></script>
+</body></html>

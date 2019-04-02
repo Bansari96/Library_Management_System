@@ -14,6 +14,7 @@ namespace LibraryManagementSystem.Tests.Controllers
     {
         BooksController controller;
         List<Book> books;
+        List<Books_Category> categories;
         Mock<IMockBooks> mock;
 
         [TestInitialize]
@@ -25,9 +26,17 @@ namespace LibraryManagementSystem.Tests.Controllers
                 new Book {Book_id=102,Book_name="Gone with the wind",Category_id=202}
             };
 
-            mock = new Mock<IMockBooks>();
-            mock.Setup(b => b.Books).Returns(books.AsQueryable());
+            categories = new List<Books_Category>
+            {
+                new Books_Category { Category_id=201, Category_name="Fake Category"},
+                new Books_Category { Category_id=202, Category_name="Fake Category"}
+            };
 
+            mock = new Mock<IMockBooks>();
+           
+            mock.Setup(b => b.Books).Returns(books.AsQueryable());
+            mock.Setup(c => c.Books_Category).Returns(categories.AsQueryable());
+            controller = new BooksController();
             controller = new BooksController(mock.Object);
         }
 
@@ -39,6 +48,15 @@ namespace LibraryManagementSystem.Tests.Controllers
 
             //assert
             Assert.AreEqual("Index", result.ViewName);
+        }
+        [TestMethod]
+        public void IndexViewLoadNotNullReturn()
+        {
+            //act
+            ViewResult result = controller.Index() as ViewResult;
+
+            //assert
+            Assert.IsNotNull(result);
         }
 
         [TestMethod]
@@ -59,6 +77,15 @@ namespace LibraryManagementSystem.Tests.Controllers
 
             //assert
             Assert.AreEqual("Details", result.ViewName);
+        }
+        [TestMethod]
+        public void DetailsViewLoadNotNull()
+        {
+            //act
+            ViewResult result = controller.Details(101) as ViewResult;
+
+            //assert
+            Assert.IsNotNull(result);
         }
 
         [TestMethod]
@@ -112,6 +139,79 @@ namespace LibraryManagementSystem.Tests.Controllers
         }
 
         [TestMethod]
+        public void EditGetViewLoad()
+        {
+            //act
+            ViewResult result = controller.Edit(101) as ViewResult;
+
+            //assert
+            Assert.AreEqual("Edit", result.ViewName);
+        }
+        [TestMethod]
+        public void EditGetViewLoadNotNull()
+        {
+            //act
+            ViewResult result = controller.Edit(101) as ViewResult;
+
+            //assert
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void EditNullId()
+        {
+            //Act
+            HttpStatusCodeResult result = controller.Edit((int?)null) as HttpStatusCodeResult;
+            //Assert
+            Assert.AreEqual(400, result.StatusCode);
+        }
+
+        [TestMethod]
+        public void EditViewNullBook()
+        {
+            //Act
+            HttpNotFoundResult result = controller.Edit(0) as HttpNotFoundResult;
+            //Assert
+            Assert.AreEqual(404, result.StatusCode);
+        }
+
+        //Edit POST
+        [TestMethod]
+        public void EditModelBook()
+        {            
+            //act
+            RedirectToRouteResult result = controller.Edit(books[0]) as RedirectToRouteResult;
+
+            //assert
+            Assert.AreEqual("Index", result.RouteValues["action"]);
+        }
+
+        [TestMethod]
+        public void EditPostInvalidModel()
+        {
+            controller.ModelState.AddModelError("Description", "Error");
+
+            //act
+            ViewResult result = controller.Edit(books[0]) as ViewResult;
+
+            //Assert
+            Assert.AreEqual("Edit", result.ViewName);
+        }
+
+        [TestMethod]
+        public void EditViewBag()
+        {
+            controller.ModelState.AddModelError("Description", "error");
+
+            // act
+            SelectList result = (controller.Edit(books[0]) as ViewResult).ViewBag.Category_id;
+
+            // assert
+            Assert.AreEqual(201, result.SelectedValue);
+
+        }
+
+        [TestMethod]
         public void DeleteViewLoad()
         {
             //act
@@ -119,6 +219,15 @@ namespace LibraryManagementSystem.Tests.Controllers
 
             //assert
             Assert.AreEqual("Delete", result.ViewName);
+        }
+        [TestMethod]
+        public void DeleteViewLoadNotNull()
+        {
+            //act
+            ViewResult result = controller.Delete(101) as ViewResult;
+
+            //assert
+            Assert.IsNotNull(result);
         }
 
         [TestMethod]
@@ -137,6 +246,26 @@ namespace LibraryManagementSystem.Tests.Controllers
             HttpNotFoundResult result = controller.Delete(0) as HttpNotFoundResult;
             //Assert
             Assert.AreEqual(404, result.StatusCode);
+        }
+
+        //Delete confirmed
+        [TestMethod]
+        public void DeleteConfirmedViewLoad()
+        {
+            //act
+            RedirectToRouteResult result = controller.DeleteConfirmed(102) as RedirectToRouteResult;
+
+            //assert
+            Assert.AreEqual("Index", result.RouteValues["action"]);
+        }
+        [TestMethod]
+        public void DeleteConfirmedViewLoadNotNull()
+        {
+            //act
+            RedirectToRouteResult result = controller.DeleteConfirmed(102) as RedirectToRouteResult;
+
+            //assert
+            Assert.IsNotNull(result);
         }
     }
 }

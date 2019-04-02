@@ -92,7 +92,7 @@ namespace LibraryManagementSystem.Controllers
                 return HttpNotFound();
             }
            ViewBag.Category_id = new SelectList(db.Books_Category, "Category_id", "Category_name", book.Category_id);
-           return View(book);
+           return View("Edit",book);
         }
 
         // POST: Books/Edit/5
@@ -106,10 +106,11 @@ namespace LibraryManagementSystem.Controllers
             {
                 //db.Entry(book).State = EntityState.Modified;
                 //db.SaveChanges();
+                db.Save(book);
                 return RedirectToAction("Index");
             }
             ViewBag.Category_id = new SelectList(db.Books_Category, "Category_id", "Category_name", book.Category_id);
-            return View(book);
+            return View("Edit",book);
         }
 
         // GET: Books/Delete/5
@@ -141,13 +142,13 @@ namespace LibraryManagementSystem.Controllers
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing)
+        //    {
+        //        db.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
     }
 }
