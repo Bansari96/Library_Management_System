@@ -12,6 +12,7 @@ namespace LibraryManagementSystem.Tests.Controllers
     [TestClass]
     public class BooksControllerTest
     {
+        //moq data
         BooksController controller;
         List<Book> books;
         List<Books_Category> categories;
@@ -28,8 +29,8 @@ namespace LibraryManagementSystem.Tests.Controllers
 
             categories = new List<Books_Category>
             {
-                new Books_Category { Category_id=201, Category_name="Fake Category"},
-                new Books_Category { Category_id=202, Category_name="Fake Category"}
+                new Books_Category { Category_id=201, Category_name="Fake Category 1"},
+                new Books_Category { Category_id=202, Category_name="Fake Category 2"}
             };
 
             mock = new Mock<IMockBooks>();
@@ -40,6 +41,7 @@ namespace LibraryManagementSystem.Tests.Controllers
             controller = new BooksController(mock.Object);
         }
 
+        //Testmethods for
         [TestMethod]
         public void IndexViewLoad()
         {
@@ -49,6 +51,7 @@ namespace LibraryManagementSystem.Tests.Controllers
             //assert
             Assert.AreEqual("Index", result.ViewName);
         }
+
         [TestMethod]
         public void IndexViewLoadNotNullReturn()
         {
@@ -220,6 +223,7 @@ namespace LibraryManagementSystem.Tests.Controllers
             //assert
             Assert.AreEqual("Delete", result.ViewName);
         }
+
         [TestMethod]
         public void DeleteViewLoadNotNull()
         {

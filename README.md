@@ -20,4 +20,11 @@
 	<li>Authorization and Authentciation added for Edit | Delete | Details Link in views</li>
 </ul>
 
+<h2><b>Assignment-2 Part:2</b></h2>
+<ul>
+	<li>Test controller created for Books </li>
+	<li>IDataBooks and IMockBooks Models created and Moq reference added</li>
+	<li>Test methods created for Index, Details, Create, Edit and Delete</li>
+</ul>
+
 
